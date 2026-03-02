@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lasers"
-version = "0.1.0"
+version = "0.0.1"
 description = "A Python package for laser operations"
 requires-python = ">=3.8"
-dependencies = ["click>=8.0"]
-
-[project.scripts]
-lasers = "lasers.cli:main"
+dependencies = ["scipy>=1.8"]
 
 [tool.setuptools.package-dir]
 "" = "src"
+
+[tool.setuptools.packages.find]
+where=["src"]
