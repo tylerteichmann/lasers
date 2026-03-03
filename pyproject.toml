@@ -6,8 +6,12 @@ build-backend = "setuptools.build_meta"
 name = "lasers"
 version = "0.0.1"
 description = "A Python package for laser operations"
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.8"
 dependencies = ["scipy>=1.8"]
+license = { text = "MIT" }
+
+authors = [{ name = "Tyler" }]
 
 [tool.setuptools.package-dir]
 "" = "src"
