@@ -1,4 +1,3 @@
-from typing import Union
 
 import numpy as np
 from numpy.typing import ArrayLike
@@ -7,7 +6,7 @@ from scipy.constants import c
 
 def spectral_linewidth(
     linewidth: ArrayLike, center_wavelength: ArrayLike
-) -> Union[float, np.ndarray]:
+) -> float | np.ndarray:
     """Calculate the spectral linewidth of a laser.
 
     Converts wavelength domain linewidth to frequency domain using the

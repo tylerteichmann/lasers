@@ -1,4 +1,4 @@
-from lasers.spectral_linewidth import spectral_linewidth
 from lasers.peak_fluence import peak_fluence
+from lasers.spectral_linewidth import spectral_linewidth
 
-__all__ = ["spectral_linewidth", "peak_fluence"]
+__all__ = ["peak_fluence", "spectral_linewidth"]

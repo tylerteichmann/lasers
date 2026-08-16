@@ -1,7 +1,6 @@
 """Tests for spectral_linewidth module."""
 
 import numpy as np
-import pytest
 
 from lasers import spectral_linewidth
 
