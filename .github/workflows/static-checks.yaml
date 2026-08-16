@@ -28,4 +28,4 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
-      - run: mypy src
+      - run: mypy src tests

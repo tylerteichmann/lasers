@@ -1,11 +1,11 @@
 import numpy as np
-from numpy.typing import ArrayLike
+from numpy.typing import ArrayLike, NDArray
 from scipy.constants import c
 
 
 def spectral_linewidth(
     linewidth: ArrayLike, center_wavelength: ArrayLike
-) -> float | np.ndarray:
+) -> np.float64 | NDArray[np.float64]:
     """Calculate the spectral linewidth of a laser.
 
     Converts wavelength domain linewidth to frequency domain using the
@@ -27,8 +27,8 @@ def spectral_linewidth(
     Examples
     --------
     >>> spectral_linewidth(168e-12, 777.783e-9)
-    83.25553032941084e9
+    np.float64(83255530329.41084)
     """
-    linewidth = np.asarray(linewidth)
-    center_wavelength = np.asarray(center_wavelength)
-    return (c * linewidth) / (center_wavelength * center_wavelength)
+    dlam = np.asarray(linewidth, dtype=np.float64)
+    lam = np.asarray(center_wavelength, dtype=np.float64)
+    return (c * dlam) / (lam * lam)
