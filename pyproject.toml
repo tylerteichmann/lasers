@@ -35,7 +35,7 @@ Source = "https://github.com/tylerteichmann/lasers"
 "Bug Tracker" = "https://github.com/tylerteichmann/lasers/issues"
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff", "mypy"]
+dev = ["pytest", "ruff", "mypy", "scipy-stubs"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/lasers"]
