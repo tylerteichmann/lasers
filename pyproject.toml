@@ -10,7 +10,7 @@ readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"
 license = { file = "LICENSE" }
 authors = [{ name = "Tyler Teichmann", email = "tyler.j.teichmann@gmail.com" }]
-keywords = ["laser", "optics", "photonics", "beam quality", "spectral linewidth", "fluence", "M-squared", "BPP"]
+keywords = ["laser", "optics", "photonics", "beam quality", "spectral linewidth", "fluence", "M-squared", "BPP", "beam parameter product"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",

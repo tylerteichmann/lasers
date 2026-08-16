@@ -19,8 +19,8 @@ $ pip install lasers
 import lasers as lz
 
 dnu = lz.spectral_linewidth(linewidth=168e-12, center_wavelength=777.783e-9)
-BPP = lz.bpp(beam_waist=1.5e-3, divergence=0.5e-3)
-m2 = lz.m_squared(bpp=BPP, wavelength=1064e-9)
+BPP = lz.beam_parameter_product(beam_waist=1.5e-3, divergence=0.5e-3)
+m2 = lz.m_squared(beam_parameter_product=BPP, wavelength=1064e-9)
 F = lz.peak_fluence(pulse_energy=100e-3, beam_radius=1e-2)
 ```
 
@@ -31,7 +31,7 @@ well-documented implementations of equations and computational tools commonly
 encountered in laser science and engineering.
 
 The design philosophy prioritizes accessibility to scientists over software
-convention. Function signatures and parameter names reflect the notation
+convention. Function signatures and parameter names reflect the terminology
 established in standard references — Siegman, Saleh & Teich, Boyd — so that
 the interface reads naturally to anyone trained in the field. Inputs and outputs
 use SI units throughout.
