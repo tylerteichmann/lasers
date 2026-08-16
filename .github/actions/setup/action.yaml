@@ -1,5 +1,5 @@
 name: Setup
-description: Install Python and install the package with dev dependencies.
+description: Install Python.
 
 inputs:
   python-version:
@@ -13,6 +13,3 @@ runs:
     - uses: actions/setup-python@v7
       with:
         python-version: ${{ inputs.python-version }}
-
-    - run: pip install ".[dev]"
-      shell: bash

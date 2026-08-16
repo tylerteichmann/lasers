@@ -1,0 +1,63 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - run: |
+          version=$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
+          tag="${{ github.event.release.tag_name }}"
+          if [ "$tag" != "$version" ] && [ "$tag" != "v$version" ]; then
+            echo "pyproject.toml version '$version' does not match release tag '$tag'"
+            exit 1
+          fi
+
+  static-checks:
+    uses: ./.github/workflows/static-checks.yaml
+
+  tests:
+    uses: ./.github/workflows/tests.yaml
+
+  build:
+    uses: ./.github/workflows/build.yaml
+
+  publish-testpypi:
+    needs: [version-check, static-checks, tests, build]
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist/
+
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          skip-existing: true
+
+  publish-pypi:
+    needs: publish-testpypi
+    if: ${{ !github.event.release.prerelease }}
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist/
+
+      - uses: pypa/gh-action-pypi-publish@release/v1
