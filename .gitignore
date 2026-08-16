@@ -18,3 +18,53 @@ env/
 
 # OS
 .DS_Store
+
+# GitHub Copilot
+.github/copilot-instructions.md
+.github/instructions/
+
+# OpenAI Codex
+AGENTS.md
+.codex/
+
+# Cursor
+.cursorrules
+.cursor/
+.cursorignore
+
+# Claude Code
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+.mcp.json
+
+# Windsurf
+.windsurfrules
+.windsurf/
+.codeiumignore
+
+# Aider
+.aider*
+.aiderignore
+
+# Cline
+.clinerules
+.clinerules/
+.cline/
+
+# Continue
+.continue/
+.continuerc.json
+.continueignore
+
+# Amazon Q
+.amazonq/
+
+# Gemini CLI
+GEMINI.md
+.gemini/
+.geminiignore
+
+# Zed
+.rules
+.zed/
