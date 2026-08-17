@@ -5,16 +5,13 @@ on:
     tags: ["v*"]
 
 jobs:
+  ci:
+    uses: ./.github/workflows/ci.yaml
+
   version-check:
     uses: tylerteichmann/ci/.github/workflows/version-check-py.yaml@main
     with:
       tag: ${{ github.ref_name }}
-
-  ci:
-    uses: tylerteichmann/ci/.github/workflows/ci-py.yaml@main
-    with:
-      python-version: "3.12"
-      python-versions: '["3.12", "3.13", "3.14"]'
 
   publish-testpypi:
     needs: [version-check, ci]
