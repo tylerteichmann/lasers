@@ -9,6 +9,8 @@ jobs:
     uses: tylerteichmann/ci/.github/workflows/release-py.yaml@main
     with:
       tag: ${{ github.event.release.tag_name }}
+      python-version: "3.12"
+      python-versions: '["3.12", "3.13", "3.14"]'
 
   publish-testpypi:
     needs: checks

@@ -8,3 +8,6 @@ on:
 jobs:
   ci:
     uses: tylerteichmann/ci/.github/workflows/ci-py.yaml@main
+    with:
+      python-version: "3.12"
+      python-versions: '["3.12", "3.13", "3.14"]'
