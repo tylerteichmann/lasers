@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lasers"
-version = "0.0.3"
+version = "0.0.4"
 description = "A Python library of laser physics equations for researchers and engineers."
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"
