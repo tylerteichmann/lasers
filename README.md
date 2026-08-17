@@ -5,8 +5,7 @@ A Python library of laser physics equations for researchers and engineers.
 [![PyPI version](https://img.shields.io/pypi/v/lasers.svg)](https://pypi.org/project/lasers/)
 [![Python](https://img.shields.io/pypi/pyversions/lasers.svg)](https://pypi.org/project/lasers/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/tylerteichmann/lasers/actions/workflows/tests.yaml/badge.svg)](https://github.com/tylerteichmann/lasers/actions/workflows/tests.yaml)
-[![Static Checks](https://github.com/tylerteichmann/lasers/actions/workflows/static-checks.yaml/badge.svg)](https://github.com/tylerteichmann/lasers/actions/workflows/static-checks.yaml)
+[![CI](https://github.com/tylerteichmann/lasers/actions/workflows/ci.yaml/badge.svg)](https://github.com/tylerteichmann/lasers/actions/workflows/ci.yaml)
 
 ## Installation
 
